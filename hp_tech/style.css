@@ -12,11 +12,12 @@ body {
 }
 
 .container {
-    max-width: 600px;
-    background-color: rgba(255, 255, 255, 0.8);
+    max-width: 90%;
+    background-color: rgba(247, 212, 212, 0.8);
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    margin: auto;
 }
 
 h1 {
@@ -42,10 +43,13 @@ h1 {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    width: 60%;
+    max-width: 300px;
 }
 
 .form button {
     padding: 10px 20px;
+    margin-top: 20px;
     font-size: 16px;
     cursor: pointer;
     background-color: #4CAF50;
@@ -56,11 +60,12 @@ h1 {
 }
 
 .form button:hover {
-    background-color: #45118a;
+    background-color: #3b0b88;
 }
 
 .forecast {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 20px;
 }
@@ -73,6 +78,9 @@ h1 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     overflow: hidden;
+    margin-bottom: 20px;
+    flex: 1 1 300px;
+    max-width: 300px;
 }
 
 .day:hover {
@@ -86,11 +94,18 @@ h1 {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.day img {
+.day .weather-image {
     width: 100px;
     height: 100px;
-    margin-bottom: 10px;
-    animation: float 3s ease-in-out infinite;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.day .weather-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .day p {
@@ -105,5 +120,25 @@ h1 {
     }
     50% {
         transform: translateY(-10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .container{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .form input[type="text"] {
+        width: 100%;
+        max-width: none;
+    }
+
+    .forecast {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .day {
+        margin-bottom: 10px;
     }
 }
