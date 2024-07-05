@@ -193,15 +193,6 @@ function displayWeather(data) {
     const description = data.weather[0].description;
     const icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
 
-    const weatherHTML = `
-        <div class="day">
-            <h2>${cityName}</h2>
-            <img src="${icon}" alt="${description}">
-            <p>Temperature: ${temperature}°C</p>
-            <p>Description: ${description}</p>
-        </div>
-    `;
-
     forecastDiv.innerHTML = weatherHTML;
 }
 
